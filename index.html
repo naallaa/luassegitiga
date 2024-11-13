@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hello World</title>
+  <link href='/style.css' rel='stylesheet'>
+<style>
+  *{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  .tengah {
+    display: flex;
+    justify-content: center;
+  }
+
+  .card {
+    width: 40%;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.3);
+  }
+
+  .cardbody {
+    padding: 2px 16px;
+  }
+
+  .cardfooter {
+    padding: 8px;
+    background-color:crimson;
+    display: flex;
+    justify-content: right;
+  }
+
+  .card>h2 {
+    padding: 0px 16px;
+  }
+
+  #hasil {
+    width: 100%;
+    height: 200px;
+    background-color:rgb(255, 244, 228);
+    margin: 20px 0px;
+    padding: 5px;
+    font-size: 14px;
+  }
+
+  label{
+    font-size: 14px;
+    font-weight:bold ;
+  }
+
+  input[type="text"]{
+    width: 100%;
+    padding: 10px 0px;
+    margin: 1px;
+  }
+
+  button{
+    border: none;
+    border-radius: 8px;
+    background-color:white ;
+    color: crimson;
+    font-size: 16px;
+    padding: 5px 20px;
+  }
+</style>
+
+</head>
+<body>
+<div class="tengah">
+  <div class="card">
+
+  <h2>Hitung Luas Segitiga</h2>
+
+    <div class="cardbody">
+  <form>
+    <label>Nilai Alas : </label>
+    <input type="text" id="nA">
+
+    <label>Nilai Tinggi : </label>
+    <input type="text" id="nT">
+  </form>
+
+  <div id="hasil">Hasil Hitung Luas Segitiga</div>
+</div>
+
+  <div class="cardfooter">
+  <button type="button" onclick="hitungluas()" class="btnhitung">Hitung Luas Segitiga</button>
+</div>
+</div>
+</div>
+
+  <script>
+    function hitungluas(){
+      let alas = document.getElementById("nA").value
+      let tinggi = document.getElementById("nT").value
+
+      let LS = 0.5 * alas * tinggi
+      
+     
+    let hsl = "Hitung Luas Segitiga dengan Nilai<br>" 
+        hsl += "Alas = "+ alas +"cm;<br>Tinggi = "+ tinggi + "cm;<br>" 
+        hsl += "Luas = 1/2 x Alas x Tinggi<br>" 
+        hsl += "Luas =" + "1/2 " + " x " + alas + " x " + tinggi +"<br>"
+        hsl += "Luas = "+ LS + "cm<sup>2</sup><br>"
+
+    document.getElementById("hasil").innerHTML = hsl
+    }
+  </script>
+</body>
+</html>
+
